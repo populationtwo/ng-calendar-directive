@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+/* ================
+   Assign Variables */
+/* ===========================
+   Setup Mixins/Helper Classes */
+.clearfix:after, .calendar ol:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* ==========
+   Setup Page */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  padding: 3em;
+  background: #6ce2f4;
+  color: grey;
+  font-family: 'Raleway', sans-serif; }
+
+.cal-nav {
+  margin-bottom: 2.5rem; }
+
+.select-wrapper {
+  min-width: 300px;
+  margin: 0 auto; }
+  .select-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.form-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 47%;
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 0 0.625rem;
+  background: #ffffff;
+  overflow: hidden;
+  border: 1px solid #cbcbcb;
+  border-radius: 3px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+  -webkit-transition: box-shadow, 0.2s;
+  -moz-transition: box-shadow, 0.2s;
+  transition: box-shadow, 0.2s; }
+  .form-select:focus, .form-select:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+  .form-select:after {
+    content: '▾';
+    position: absolute;
+    top: 0;
+    right: 12px;
+    z-index: 1;
+    color: #bbbbbb;
+    line-height: 40px;
+    font-size: 14px; }
+    .ie .form-select:after {
+      display: none; }
+
+select {
+  position: relative;
+  background: transparent;
+  background-image: none;
+  display: block;
+  width: 100%;
+  outline: none;
+  color: #888888;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  padding: 10px 10px 10px 5px;
+  text-overflow: '';
+  text-indent: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+  select[multiple=multiple] {
+    height: auto;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+    -webkit-transition: box-shadow, 0.2s;
+    -moz-transition: box-shadow, 0.2s;
+    transition: box-shadow, 0.2s; }
+    select[multiple=multiple]:hover {
+      border-color: #cccccc;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+  select option[disabled] {
+    color: #eeeeee;
+    text-shadow: none;
+    border: none; }
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #888888; }
+
+select::-ms-expand {
+  display: none; }
+
+/* ================
+   Calendar Styling */
+.calendar {
+  background: white;
+  padding: 3em;
+  border-radius: 10px; }
+  .calendar .month {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 3em;
+    color: #6EB590; }
+  .calendar ol {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .calendar ol li {
+      float: left;
+      width: 14.28571%; }
+  .calendar .day-names {
+    border-bottom: 1px solid #eee; }
+    .calendar .day-names li {
+      text-transform: uppercase;
+      margin-bottom: .5em; }
+  .calendar .days li {
+    border-bottom: 1px solid #eee;
+    min-height: 8em; }
+    .calendar .days li .date {
+      margin: .5em 0; }
+    .calendar .days li:nth-child(n+29) {
+      border-bottom: none; }
+    .calendar .days li.outside .date {
+      color: #ddd; }

@@ -1,15 +1,175 @@
 <!DOCTYPE html>
 <html ng-app="calendarDemoApp">
 <head>
-<title>Calendar Directive Challenge</title>
-<link rel="stylesheet" type="text/css" href="./main.css" />
+	<title>Angular Calendar Directive</title>
+	<link rel="stylesheet" type="text/css" href="./bower_components/foundation/css/normalize.min.css" />
+	<!--<link rel="stylesheet" type="text/css" href="./bower_components/foundation/css/foundation.min.css" />-->
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 </head>
 <body>
 
-<!-- your code for nav and calendar directive instance here -->
+<div class="page">
+	<div class="container">
+		<form class="cal-nav">
+			<div class="select-wrapper">
+
+			<div class="form-select">
+				<select name="" id="">
+					<option value="" disabled="disabled" selected="selected">Choose a character</option>
+					<option>Bender</option>
+					<option>Jerry Seinfeld</option>
+					<option>Zoidberg</option>
+					<option>Kramer</option>
+					<option>Hapskidoodle</option>
+					<option>Doodleski</option>
+				</select>
+			</div>
+			<div class="form-select">
+				<select name="" id="">
+					<option value="" disabled="disabled" selected="selected">Choose a character</option>
+					<option>Bender</option>
+					<option>Jerry Seinfeld</option>
+					<option>Zoidberg</option>
+					<option>Kramer</option>
+					<option>Hapskidoodle</option>
+					<option>Doodleski</option>
+				</select>
+			</div>
+			</div>
+
+
+		</form>
+	</div>
+	<div class="container">
+		<div class="calendar"><h1 class="month">December 2013</h1>
+			<ol class="day-names">
+				<li>Sunday</li>
+				<li>Monday</li>
+				<li>Tuesday</li>
+				<li>Wednesday</li>
+				<li>Thursday</li>
+				<li>Friday</li>
+				<li>Saturday</li>
+			</ol>
+			<ol class="days">
+				<li>
+					<div class="date">1</div>
+				</li>
+				<li>
+					<div class="date">2</div>
+				</li>
+				<li>
+					<div class="date">3</div>
+				</li>
+				<li>
+					<div class="date">4</div>
+				</li>
+				<li>
+					<div class="date">5</div>
+				</li>
+				<li>
+					<div class="date">6</div>
+				</li>
+				<li>
+					<div class="date">7</div>
+				</li>
+				<li>
+					<div class="date">8</div>
+				</li>
+				<li>
+					<div class="date">9</div>
+				</li>
+				<li>
+					<div class="date">10</div>
+				</li>
+				<li>
+					<div class="date">11</div>
+				</li>
+				<li>
+					<div class="date">12</div>
+				</li>
+				<li>
+					<div class="date">13</div>
+				</li>
+				<li>
+					<div class="date">14</div>
+				</li>
+				<li>
+					<div class="date">15</div>
+				</li>
+				<li>
+					<div class="date">16</div>
+				</li>
+				<li>
+					<div class="date">17</div>
+				</li>
+				<li>
+					<div class="date">18</div>
+				</li>
+				<li>
+					<div class="date">19</div>
+				</li>
+				<li>
+					<div class="date">20</div>
+				</li>
+				<li>
+					<div class="date">21</div>
+				</li>
+				<li>
+					<div class="date">22</div>
+				</li>
+				<li>
+					<div class="date">23</div>
+
+				</li>
+				<li>
+					<div class="date">24</div>
+				</li>
+				<li>
+					<div class="date">25</div>
+				</li>
+				<li>
+					<div class="date">26</div>
+				</li>
+				<li>
+					<div class="date">27</div>
+				</li>
+				<li>
+					<div class="date">28</div>
+				</li>
+				<li>
+					<div class="date">29</div>
+				</li>
+				<li>
+					<div class="date">30</div>
+				</li>
+				<li>
+					<div class="date">31</div>
+				</li>
+				<li class="outside">
+					<div class="date">1</div>
+				</li>
+				<li class="outside">
+					<div class="date">2</div>
+				</li>
+				<li class="outside">
+					<div class="date">3</div>
+				</li>
+				<li class="outside">
+					<div class="date">4</div>
+				</li>
+			</ol>
+		</div>
+
+
+	</div>
+
+</div>
+
+
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="./utilities/calendarRange.js"></script>
+<script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
 <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

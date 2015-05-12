@@ -1,0 +1,197 @@
+// All Sass tools and helpers.
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+@import "bourbon/bourbon";
+
+/* ================
+   Assign Variables */
+$primary-color: #6EB590;
+$secondary-color: #9987B5;
+
+/* ===========================
+   Setup Mixins/Helper Classes */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* ==========
+   Setup Page */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 3em;
+	background: #6ce2f4;
+	color: grey;
+	font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cal-nav {
+	margin-bottom: rem(40);
+}
+
+.select-wrapper {
+	@include clearfix;
+	min-width: 300px;
+	margin: 0 auto;
+}
+
+.form-select {
+	@include user-select(none);
+	width: 47%;
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin: 0 rem(10);
+	background: #ffffff;
+	overflow: hidden;
+	border: 1px solid #cbcbcb;
+	border-radius: 3px;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+
+	@include transition(box-shadow, 0.2s);
+
+	&:focus,
+	&:hover {
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	}
+
+	&:after {
+		content: '▾';
+		position: absolute;
+		top: 0;
+		right: 12px;
+		z-index: 1;
+		color: #bbbbbb;
+		line-height: 40px;
+		font-size: 14px;
+
+		.ie & {
+			display: none;
+		}
+	}
+}
+
+select {
+	position: relative;
+	background: transparent;
+	background-image: none;
+	display: block;
+	width: 100%;
+	outline: none;
+	color: #888888;
+	cursor: pointer;
+	z-index: 2;
+	border: none;
+	padding: 10px 10px 10px 5px;
+	// This is so hacky.. (for Firefox)
+	// Removes the default select arrow.
+	text-overflow: '';
+	text-indent: 5px;
+	// End of brutal hack
+
+	@include appearance(none);
+
+	&[multiple=multiple] {
+		height: auto;
+		border: 1px solid #cbcbcb;
+		border-radius: 3px;
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+
+		@include transition(box-shadow, 0.2s);
+
+		&:hover {
+			border-color: #cccccc;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	option[disabled] {
+		color: #eeeeee;
+		text-shadow: none;
+		border: none;
+	}
+}
+
+select:-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #888888;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+
+
+
+
+
+
+/* ================
+   Calendar Styling */
+.calendar {
+	background: white;
+	padding: 3em;
+	border-radius: 10px;
+	.month {
+		margin-top: 0;
+		font-weight: normal;
+		font-size: 3em;
+		color: $primary-color;
+	}
+	ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@extend .clearfix;
+		li {
+			float: left;
+			width: percentage(1/7);
+		}
+	}
+	.day-names {
+		border-bottom: 1px solid #eee;
+		li {
+			text-transform: uppercase;
+			margin-bottom: .5em
+		}
+	}
+	.days {
+		li {
+			border-bottom: 1px solid #eee;
+			min-height: 8em;
+			.date {
+				margin: .5em 0;
+			}
+
+			&:nth-child(n+29) {
+				border-bottom: none;
+			}
+			&.outside .date {
+				color: #ddd;
+			}
+		}
+	}
+}
