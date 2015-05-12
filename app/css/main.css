@@ -1,9 +1,5 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
-/* ================
-   Assign Variables */
-/* ===========================
-   Setup Mixins/Helper Classes */
 .clearfix:after, .calendar ol:after {
   content: ".";
   display: block;
@@ -11,37 +7,55 @@
   clear: both;
   visibility: hidden; }
 
-/* ==========
-   Setup Page */
 *, *:before, *:after {
   box-sizing: border-box; }
 
 body {
   padding: 3em;
-  background: #6ce2f4;
+  background: #36454B;
   color: grey;
   font-family: 'Raleway', sans-serif; }
 
-.cal-nav {
-  margin-bottom: 2.5rem; }
+.page {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 87.5rem; }
 
 .select-wrapper {
-  min-width: 300px;
-  margin: 0 auto; }
+  margin: 0 auto 1.875rem;
+  text-align: center; }
   .select-wrapper::after {
     clear: both;
     content: "";
     display: table; }
+
+button {
+  transition: all 0.15s ease-out 0s;
+  background: #167094;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  vertical-align: top;
+  padding: 0.75rem 1.875rem;
+  cursor: pointer; }
+  button:hover, button:focus {
+    background: #0f4e68; }
 
 .form-select {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 47%;
+  width: 18.75rem;
   position: relative;
   display: inline-block;
-  float: left;
   margin: 0 0.625rem;
   background: #ffffff;
   overflow: hidden;
@@ -110,14 +124,20 @@ select::-ms-expand {
 /* ================
    Calendar Styling */
 .calendar {
-  background: white;
-  padding: 3em;
-  border-radius: 10px; }
+  background: white; }
+  .calendar header {
+    background: #EA6857;
+    padding: 1.25rem 0 0; }
+    .calendar header::after {
+      clear: both;
+      content: "";
+      display: table; }
   .calendar .month {
     margin-top: 0;
     font-weight: normal;
     font-size: 3em;
-    color: #6EB590; }
+    color: #FFF;
+    text-align: center; }
   .calendar ol {
     list-style: none;
     margin: 0;
@@ -131,11 +151,21 @@ select::-ms-expand {
       text-transform: uppercase;
       margin-bottom: .5em; }
   .calendar .days li {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
     min-height: 8em; }
     .calendar .days li .date {
-      margin: .5em 0; }
-    .calendar .days li:nth-child(n+29) {
-      border-bottom: none; }
+      margin: .5em 0;
+      padding-left: 0.625rem;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.9); }
+    .calendar .days li:nth-child(7n+7) {
+      border-right: 1px solid rgba(0, 0, 0, 0.05); }
     .calendar .days li.outside .date {
-      color: #ddd; }
+      color: rgba(0, 0, 0, 0.3); }
+    .calendar .days li.today {
+      color: #800000;
+      background: whitesmoke; }
+
+.calendar-body {
+  padding: 1.875rem 2.5rem; }
