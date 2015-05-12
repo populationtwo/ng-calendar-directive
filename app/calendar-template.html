@@ -1,0 +1,67 @@
+
+<div class="container">
+	<form class="cal-nav">
+		<div class="select-wrapper">
+
+			<div class="form-select">
+				<select name="" id="">
+					<option value="" disabled="disabled" selected="selected">Choose a character</option>
+					<option>Bender</option>
+					<option>Jerry Seinfeld</option>
+					<option>Zoidberg</option>
+					<option>Kramer</option>
+					<option>Hapskidoodle</option>
+					<option>Doodleski</option>
+				</select>
+			</div>
+			<div class="form-select">
+				<select name="" id="">
+					<option value="" disabled="disabled" selected="selected">Choose a character</option>
+					<option>Bender</option>
+					<option>Jerry Seinfeld</option>
+					<option>Zoidberg</option>
+					<option>Kramer</option>
+					<option>Hapskidoodle</option>
+					<option>Doodleski</option>
+				</select>
+			</div>
+		</div>
+
+
+	</form>
+</div>
+<div class="container">
+	<div class="calendar"><h1 class="month">December 2013</h1>
+		<ol class="day-names">
+			<li>Sunday</li>
+			<li>Monday</li>
+			<li>Tuesday</li>
+			<li>Wednesday</li>
+			<li>Thursday</li>
+			<li>Friday</li>
+			<li>Saturday</li>
+		</ol>
+		<ol class="days">
+
+			<li ng-repeat="day in range.days" ng-class="day.dayClass">
+				<div class="date">{{day.day}}</div>
+			</li>
+
+
+			<!--<li class="outside">-->
+				<!--<div class="date">1</div>-->
+			<!--</li>-->
+			<!--<li class="outside">-->
+				<!--<div class="date">2</div>-->
+			<!--</li>-->
+			<!--<li class="outside">-->
+				<!--<div class="date">3</div>-->
+			<!--</li>-->
+			<!--<li class="outside">-->
+				<!--<div class="date">4</div>-->
+			<!--</li>-->
+		</ol>
+	</div>
+
+
+</div>
