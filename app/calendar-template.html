@@ -1,34 +1,3 @@
-<!--<div class="container">-->
-<!--<form class="cal-nav">-->
-<!--<div class="select-wrapper">-->
-
-<!--<div class="form-select">-->
-<!--<select name="" id="">-->
-<!--<option value="" disabled="disabled" selected="selected">Choose a character</option>-->
-<!--<option>Bender</option>-->
-<!--<option>Jerry Seinfeld</option>-->
-<!--<option>Zoidberg</option>-->
-<!--<option>Kramer</option>-->
-<!--<option>Hapskidoodle</option>-->
-<!--<option>Doodleski</option>-->
-<!--</select>-->
-<!--</div>-->
-<!--<div class="form-select">-->
-<!--<select name="" id="">-->
-<!--<option value="" disabled="disabled" selected="selected">Choose a character</option>-->
-<!--<option>Bender</option>-->
-<!--<option>Jerry Seinfeld</option>-->
-<!--<option>Zoidberg</option>-->
-<!--<option>Kramer</option>-->
-<!--<option>Hapskidoodle</option>-->
-<!--<option>Doodleski</option>-->
-<!--</select>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--</form>-->
-<!--</div>-->
 <div class="container">
 	<div class="calendar">
 		<header>
@@ -38,16 +7,15 @@
 			<form class="cal-nav">
 				<div class="select-wrapper">
 					<div class="form-select">
-						<select ng-model="selectedMonth" name="month" id="month" ng-options="monthName.id as monthName.name for monthName in monthNames"></select>
+						<select ng-model="selectedMonth" name="month" id="month" ng-options="monthName.id as monthName.name for monthName in monthNames" ng-change="refresh()"></select>
 					</div>
 					<div class="form-select">
-						<select ng-model="selectedYear" name="year" id="year" ng-options="year as year for year in yearArray"></select>
-
+						<select ng-model="selectedYear" name="year" id="year" ng-options="year as year for year in yearArray" ng-change="refresh()"></select>
 					</div>
+					<button ng-click="setToday()">Today</button>
 				</div>
 			</form>
 		</header>
-
 
 		<ol class="day-names">
 			<li>Sunday</li>
@@ -59,24 +27,9 @@
 			<li>Saturday</li>
 		</ol>
 		<ol class="days">
-
 			<li ng-repeat="day in range.days" ng-class="day.dayClass">
 				<div class="date">{{day.day}}</div>
 			</li>
-
-
-			<!--<li class="outside">-->
-			<!--<div class="date">1</div>-->
-			<!--</li>-->
-			<!--<li class="outside">-->
-			<!--<div class="date">2</div>-->
-			<!--</li>-->
-			<!--<li class="outside">-->
-			<!--<div class="date">3</div>-->
-			<!--</li>-->
-			<!--<li class="outside">-->
-			<!--<div class="date">4</div>-->
-			<!--</li>-->
 		</ol>
 	</div>
 

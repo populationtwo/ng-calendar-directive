@@ -38,37 +38,47 @@ angular.module( 'calendarApp', [] )
 			$scope.yearArray.push( start );
 		}
 
-		// set month, year in drop down
+		// set year, month, year in drop down
 		$scope.selectedMonth = currentMonth;
 		$scope.selectedYear = currentYear;
 
-		// on drop down change, recreate calendar
+		// render calendar on change
+		$scope.refresh = function () {
+			currentMonth = $scope.selectedMonth;
+			$scope.renderCalendar( $scope.selectedYear, $scope.selectedMonth );
+		};
 
-		// load the calendar
+		// go back to today's date
+		$scope.setToday = function () {
+			currentMonth = date.getMonth();
+			currentYear = date.getFullYear();
+			$scope.selectedMonth = currentMonth;
+			$scope.selectedYear = currentYear;
+			$scope.renderCalendar( currentYear, currentMonth );
+		};
 
-		// display calendar
-		
-		// set appropriate class for previous and next months
-
-		var range1 = CalendarRange.getMonthlyRange( new Date() );
-		//console.log( range1.first );
-		//console.log( range1.start );
-		//console.log( range1.end );
-		//console.log( range1.last );
-		//console.log( range1.days );
-
-
-		$scope.range = CalendarRange.getMonthlyRange( new Date() );
-		$scope.range.days.forEach( changeDayClass );
-
-		function changeDayClass(element) {
-			if (element.month < date.getMonth() || element.month > date.getMonth()) {
-				element.dayClass = 'outside';
-			}
-
+		// render calendar
+		$scope.renderCalendar = function (year, month) {
+			$scope.range = CalendarRange.getMonthlyRange( new Date( year, month ) );
+			$scope.range.days.forEach( changeDayClass );
 		}
 
+		// set appropriate class for previous and next months
+		function changeDayClass(element) {
+			if ((element.month < date.getMonth() || element.month > date.getMonth())) {
+				element.dayClass = 'outside';
+			} else if (element.month == date.getMonth() && (element.year < date.getFullYear() || element.year > date.getFullYear())) {
+				element.dayClass = 'outside';
+			} else {
+				element.dayClass = '';
+			}
 
+			if (element.day == date.getDate() && element.month == date.getMonth() && element.year == date.getFullYear()) {
+				element.dayClass += 'today';
+			}
+		}
+
+		// display calendar
+		$scope.renderCalendar( currentYear, currentMonth );
 	} )
 
-// your controller and directive code go here
